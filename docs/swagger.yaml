@@ -1,0 +1,89 @@
+definitions:
+  entity.Product:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      price:
+        type: number
+      sku:
+        type: string
+      types:
+        type: string
+    type: object
+  payload.CreateProductRequest:
+    properties:
+      name:
+        type: string
+      price:
+        type: number
+      types:
+        type: string
+    required:
+    - name
+    - price
+    - types
+    type: object
+info:
+  contact:
+    email: rasyidmaulidmajid@gmail.com
+    name: rasyid
+  description: This is a backend service for superindo
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: superindo
+  version: "1.0"
+paths:
+  /v1/movie:
+    post:
+      description: Endpoint for Create Product
+      parameters:
+      - description: request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/payload.CreateProductRequest'
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Create Product
+      tags:
+      - Products
+  /v1/movie/like:
+    get:
+      description: Endpoint for  Get Products
+      parameters:
+      - description: find product
+        example: buah
+        in: query
+        name: find
+        type: string
+      - description: sort
+        example: Type Buah
+        in: query
+        name: sort
+        type: string
+      - description: filter
+        example: created_at.desc
+        in: query
+        name: filter
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entity.Product'
+            type: array
+      summary: GGet Products
+      tags:
+      - Products
+swagger: "2.0"

@@ -1,0 +1,6 @@
+redis:
+  superindo:
+    host: 172.28.0.4
+    port: 6379
+    username:
+    password:

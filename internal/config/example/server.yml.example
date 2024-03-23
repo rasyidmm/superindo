@@ -1,0 +1,6 @@
+server:
+  rest:
+    tls: false
+    host:
+    port: 3000
+    timeout: 60

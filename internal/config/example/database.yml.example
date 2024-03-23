@@ -1,0 +1,7 @@
+database:
+  superindo:
+    host: 172.28.0.3
+    port: 3306
+    username: root
+    password: P@ssw0rd
+    dbname: superindo
